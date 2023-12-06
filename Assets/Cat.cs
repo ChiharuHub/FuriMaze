@@ -22,4 +22,12 @@ public class Cat : MonoBehaviour
             this.transform.Rotate(0, -5, 0);
         }
     }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Dog")
+        {
+            this.GetComponent<MeshRenderer>().enabled = false;
+        }    
+    }
 }
